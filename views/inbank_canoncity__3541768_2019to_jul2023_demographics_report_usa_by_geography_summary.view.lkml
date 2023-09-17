@@ -54,4 +54,12 @@ view: inbank_canoncity__3541768_2019to_jul2023_demographics_report_usa_by_geogra
   measure: count {
     type: count
   }
+
+  measure: Value2 {
+    label: "Value"
+    type: sum
+    sql: ${value} ;;
+    value_format_name: percent_0
+  }
+
 }

@@ -25,6 +25,22 @@ view: inbank_canoncity__3541768_2019to_jul2023_zero_point_report {
     datatype: date
     sql: ${TABLE}.Date2 ;;
   }
+
+  dimension_group: time {
+    type: time
+    timeframes: [raw, hour,hour_of_day]
+    convert_tz: no
+    datatype: timestamp
+    sql: ${TABLE}.time_of_day ;;
+  }
+
+  dimension_group: time2 {
+    type: time
+    timeframes: [raw, hour,hour_of_day]
+    convert_tz: no
+    datatype: timestamp
+    sql: ${TABLE}.time_of_day2 ;;
+  }
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
     # This dimension will be called "Day of Week" in Explore.
@@ -48,6 +64,7 @@ view: inbank_canoncity__3541768_2019to_jul2023_zero_point_report {
     type: string
     sql: ${TABLE}.Time_of_Day ;;
   }
+
 
   dimension: time_of_day2 {
     type: number
@@ -77,4 +94,5 @@ view: inbank_canoncity__3541768_2019to_jul2023_zero_point_report {
   measure: count {
     type: count
   }
+
 }

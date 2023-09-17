@@ -129,4 +129,12 @@ view: inbank_canoncity__3541768_2019to_jul2023_expanded_cel_cdl_report_cdl {
   measure: count {
     type: count
   }
+
+  measure: sum_values {
+    label: "Value"
+    type: sum
+    sql: ${visits} ;;
+  }
+
+
 }

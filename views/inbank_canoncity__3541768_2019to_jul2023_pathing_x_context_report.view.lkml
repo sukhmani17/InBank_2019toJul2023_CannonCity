@@ -26,10 +26,20 @@ view: inbank_canoncity__3541768_2019to_jul2023_pathing_x_context_report {
     sql: ${TABLE}.lat_long ;;
   }
 
+
+
   dimension: lat_of_observation_point {
     type: number
     sql: ${TABLE}.Lat_of_Observation_Point ;;
   }
+
+
+  dimension: loc {
+    type: location
+    sql_latitude:${lat_of_observation_point} ;;
+    sql_longitude:${lon_of_observation_point} ;;
+  }
+
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.

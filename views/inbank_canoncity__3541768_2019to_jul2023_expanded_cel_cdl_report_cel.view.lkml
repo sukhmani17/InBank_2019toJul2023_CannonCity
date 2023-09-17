@@ -62,6 +62,13 @@ view: inbank_canoncity__3541768_2019to_jul2023_expanded_cel_cdl_report_cel {
     sql: ${TABLE}.Common_Evening_Long ;;
   }
 
+  dimension: loc {
+    type: location
+    sql_latitude:${common_evening_lat} ;;
+    sql_longitude:${common_evening_long} ;;
+  }
+
+
   dimension: common_evening_micro {
     type: string
     sql: ${TABLE}.Common_Evening_Micro ;;
@@ -133,5 +140,11 @@ view: inbank_canoncity__3541768_2019to_jul2023_expanded_cel_cdl_report_cel {
   }
   measure: count {
     type: count
+  }
+
+  measure: sum_values {
+    label: "Value"
+    type: sum
+    sql: ${visits} ;;
   }
 }
